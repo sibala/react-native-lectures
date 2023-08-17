@@ -15,6 +15,7 @@ import StackNavigator from './components/4.navigation/navigators/StackNavigator'
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './components/4.navigation/navigators/DrawerNavigator';
 import BottomTabNavigator from './components/4.navigation/navigators/BottomTabNavigator';
+import { CameraApp } from './components/5.camera/CameraApp';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,9 +39,13 @@ export default function App() {
     
     <NavigationContainer>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-        {/* Navigation */}
+        {/* 5. camera */}
+        <CameraApp />
+        
+        
+        {/* 4. Navigation */}
         {/* <StackNavigator /> */}
-        <DrawerNavigator />
+        {/* <DrawerNavigator /> */}
        
 
 
