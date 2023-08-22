@@ -15,6 +15,7 @@ export default function BottomTabNavigator() {
       <Tab.Screen name="ContactMap" component={ContactMap} options={{
         tabBarIcon: ({color, size}) => <FontAwesome name="map-marker" size={size} color={color} />,
         title: '',
+        headerShown: false,
       }}/>
     </Tab.Navigator>
   );

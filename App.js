@@ -16,6 +16,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './components/4.navigation/navigators/DrawerNavigator';
 import BottomTabNavigator from './components/4.navigation/navigators/BottomTabNavigator';
 import { CameraApp } from './components/5.camera/CameraApp';
+import { RootNavigator } from './components/6.authentication/navigators/RootNavigator';
+import { AuthProvider } from './components/6.authentication/contexts/AuthContext';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,12 +37,20 @@ export default function App() {
     return null;
   }
 
-  return (
-    
+  return ( 
     <NavigationContainer>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
+        {/* 6. Authentication  */}
+        {/* If logged in, display AppNav Else display AuthNav */}
+        <AuthProvider>
+          <RootNavigator />
+        </AuthProvider>
+
+        
+        
+
         {/* 5. camera */}
-        <CameraApp />
+        {/* <CameraApp /> */}
         
         
         {/* 4. Navigation */}
